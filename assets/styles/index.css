@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #F5DB13;
+}
+
+header > img {
+    width: 64px;
+}
+
+header > button {
+    background: none;
+}
