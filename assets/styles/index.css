@@ -29,10 +29,16 @@ header > button {
 
 .navbar > a {
     font-size: 1.5rem;
-    color: #000000;
-    margin-right: 15px;
+    color: #212121;
+    margin-right: 20px;
     text-decoration: none;
     font-family: 'Karla', sans-serif;
+    font-weight: 500;
+}
+
+.navbar-home {
+    padding: 0 5px 9px 5px;
+    border-bottom: 4px solid black;
 }
 
 @media(min-width: 481px){
@@ -47,7 +53,7 @@ header > button {
 
 }
 
-@media (min-width: 670px){
+@media (min-width: 690px){
     
     .hamburger-menu {
         display: none;
