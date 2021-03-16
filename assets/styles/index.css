@@ -22,3 +22,39 @@ header > img {
 header > button {
     background: none;
 }
+
+.navbar {
+    display: none;
+}
+
+.navbar > a {
+    font-size: 1.5rem;
+    color: #000000;
+    margin-right: 15px;
+    text-decoration: none;
+    font-family: 'Karla', sans-serif;
+}
+
+@media(min-width: 481px){
+
+    header {
+        padding: 20px 10px;
+    }
+
+    header > img {
+    width: 128px;
+    }
+
+}
+
+@media (min-width: 670px){
+    
+    .hamburger-menu {
+        display: none;
+    }
+
+    .navbar{
+        display: flex;
+    }
+
+}
