@@ -1,151 +1,147 @@
 * {
-    box-sizing: border-box;
-    border: 0;
-    outline: 0;
-    padding: 0;
-    margin: 0;
+	box-sizing: border-box;
+	border: 0;
+	outline: 0;
+	padding: 0;
+	margin: 0;
 }
 
 header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px;
-    background-color: #F5DB13;
-    box-shadow: 0px 3px 21px -5px rgba(0,0,0,0.75);
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	padding: 15px;
+	background-color: #f5db13;
+	box-shadow: 0px 3px 21px -5px rgba(0, 0, 0, 0.75);
 }
 
 header > img {
-    width: 64px;
+	width: 64px;
 }
 
 header > button {
-    background: none;
+	background: none;
 }
 
 .navbar {
-    display: none;
+	display: none;
 }
 
 .navbar > a {
-    font-size: 1.5rem;
-    color: #212121;
-    margin-right: 20px;
-    text-decoration: none;
-    font-family: 'Karla', sans-serif;
-    font-weight: 500;
+	font-size: 1.5rem;
+	color: #212121;
+	margin-right: 20px;
+	text-decoration: none;
+	font-family: "Karla", sans-serif;
+	font-weight: 500;
 }
 
 .navbar-home {
-    padding: 0 5px 9px 5px;
-    border-bottom: 4px solid black;
+	padding: 0 5px 9px 5px;
+	border-bottom: 4px solid black;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
-main, main > div {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    font-family: 'Karla', sans-serif;
-    text-align: center;
+main,
+main > div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100%;
+	font-family: "Karla", sans-serif;
+	text-align: center;
 }
 
 main {
-    background: linear-gradient(#F5DB13,#F2B807);
+	background: linear-gradient(#f5db13, #f2b807);
 }
 
 main > div > h1 {
-    font-size: 42px;
-    font-weight: normal;
-    padding: 20px 40px;
+	font-size: 42px;
+	font-weight: normal;
+	padding: 20px 40px;
 }
 
 main > div > p {
-    font-size: 24px;
-    font-weight: 400;
-    padding: 20px 40px;
-    line-height: 32px;
+	font-size: 24px;
+	font-weight: 400;
+	padding: 20px 40px;
+	line-height: 32px;
 }
 
 .pikachu {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 .link-pokemon {
-    width: 300px;
-    height: 50px;
-    border-radius: 11px;
-    background: #73D677;
-    box-shadow: 0px 7px 0px 0px #5eaf62;
-    margin-top: 10px;
-    font-size: 23px;
-    font-weight: 700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;   
+	width: 300px;
+	height: 50px;
+	border-radius: 11px;
+	background: #73d677;
+	box-shadow: 0px 7px 0px 0px #5eaf62;
+	margin-top: 10px;
+	font-size: 23px;
+	font-weight: 700;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: black;
 }
 
-@media(min-width: 481px){
+@media (min-width: 481px) {
+	header {
+		padding: 20px 10px;
+	}
 
-    header {
-        padding: 20px 10px;
-    }
-
-    header > img {
-        width: 128px;
-    }
-
+	header > img {
+		width: 128px;
+	}
 }
 
-@media(min-width: 690px){
-    
-    .hamburger-menu {
-        display: none;
-    }
+@media (min-width: 690px) {
+	.hamburger-menu {
+		display: none;
+	}
 
-    .navbar{
-        display: flex;
-    }
-
+	.navbar {
+		display: flex;
+	}
 }
 
-@media(min-width: 769px) {
-    
-    main{
-        flex-direction: row-reverse;
-    }
+@media (min-width: 769px) {
+	main {
+		flex-direction: row-reverse;
+	}
 
-    main > img, main > div{
-        flex-grow: 1;
-    }
+	main > img,
+	main > div {
+		flex-grow: 1;
+	}
 
-    .pikachu {
-        max-width: 55%;
-    }
-    
-    main > div {
-       justify-content: space-between;
-    }
+	.pikachu {
+		max-width: 55%;
+	}
 
-    main > div > p {
-        margin: 30px 0;
-        font-size: 32px;
-        text-align: left;
-    }
+	main > div {
+		justify-content: space-between;
+	}
 
-    main > div> h1 {
-        font-size: 72px;
-        text-align: left;
-    }
+	main > div > p {
+		margin: 30px 0;
+		font-size: 32px;
+		text-align: left;
+	}
+
+	main > div > h1 {
+		font-size: 72px;
+		text-align: left;
+	}
 }
