@@ -225,23 +225,23 @@ h1 {
 	}
 
 	@media (min-width: 1400px) {
+		header {
+			padding: 20px 130px;
+		}
 
-	header {
-		padding: 20px 130px;
-	}
+		h1 {
+			font-size: 72px;
+			margin: 40px 130px;
+		}
+		.hidden-3 {
+			display: inline-block;
+		}
 
-	h1 {
-		font-size: 72px;
-		margin: 40px 130px;
-	}
-	.hidden-3 {
-		display: inline-block;
-	}
-
-	.legendaries-info {
-		margin: 30px 130px;
-	}
-	.legendaries-carrossel {
-		margin: 30px 130px 30px 130px;
+		.legendaries-info {
+			margin: 30px 130px;
+		}
+		.legendaries-carrossel {
+			margin: 30px 130px 30px 130px;
+		}
 	}
 }
