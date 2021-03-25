@@ -61,6 +61,7 @@ main > div {
 
 main {
 	background: linear-gradient(#f5db13, #f2b807);
+	padding-bottom: 20px;
 }
 
 main > div > h1 {
@@ -94,6 +95,49 @@ main > div > p {
 	align-items: center;
 	text-decoration: none;
 	color: black;
+	transition: background 0.9s, color 0.3s;
+}
+
+.link-pokemon:hover {
+	color: #fff;
+	background: #5eaf62;
+}
+
+.botao-flutuante {
+	position: fixed;
+	width: 64px;
+	right: 10px;
+	bottom: 10px;
+	transition: all 0.3s;
+	animation: inicio-pokebola 2s 1;
+}
+
+.botao-flutuante > img {
+	width: 100%;
+}
+
+.botao-flutuante:hover {
+	width: 128px;
+}
+
+@keyframes pular {
+	60% {
+		transform: translateY(-32px);
+	}
+}
+
+@keyframes inicio-pokebola {
+	0% {
+		transform: translateY(-200px);
+		opacity: 0%;
+	}
+	50% {
+		transform: translateY(0);
+		opacity: 100%;
+	}
+	85% {
+		transform: translateY(-32px);
+	}
 }
 
 @media (min-width: 481px) {
