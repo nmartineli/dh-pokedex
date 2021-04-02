@@ -1,10 +1,15 @@
-const LegendaryModel = require('../models/LegendaryModel');
+const LegendariesService = require('../services/LegendariesService');
 
 const controller = {
-	index: (req, res) => {
-		const pineco = new LegendaryModel(1, 'Pineco', 'Melhor Pokemon do Mundo', 'Bug');
-		res.json(pineco);
-	},
-};
+    index: (req, res) => {
+        const { name } = req.query;
+		console.log(name);
+        const legendary = LegendariesService.listPokemonData(name);        
+		console.log(legendary);
+        return res.render('legendaries', {
+            legendary
+        });      
+    }
+}
 
 module.exports = controller;
