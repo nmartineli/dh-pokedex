@@ -1,0 +1,230 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	background-color: #1d1e1d;
+	color: #fdfdfd;
+	font-family: 'Karla', sans-serif;
+}
+
+h1 {
+	font-size: 42px;
+	font-weight: normal;
+	line-height: 52px;
+	margin: 15px 30px;
+	letter-spacing: 4px;
+	color: #ffffff;
+}
+
+.legendary-not-found {
+	height: calc(100vh - 380px);
+}
+
+.legendaries-info {
+	margin: 0 25px;
+	padding-top: 30px;
+	border-top: solid 1px #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.legendaries-main-img > img {
+	max-width: 80%;
+	display: block;
+	margin: 0 auto;
+}
+
+.legendaries-name {
+	font-size: 62px;
+	letter-spacing: 4px;
+	font-weight: 400;
+	margin: 10px 0;
+}
+
+.legendaries-description {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 14px;
+	line-height: 17px;
+	font-weight: 400;
+}
+
+.legendaries-stats {
+	margin: 30px 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.legendaries-stats-card {
+	width: 45%;
+	margin: 10px 0;
+}
+
+.card-title,
+.card-content {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.card-content {
+	font-weight: 700;
+	margin: 5px 0;
+}
+
+.card-charge-loader {
+	height: 7px;
+	display: flex;
+	margin-top: 3px;
+}
+
+.card-charge-loader-filled {
+	background-color: #f5db13;
+	width: 75%;
+	border-radius: 20px 0 0 20px;
+}
+
+.card-charge-loader-empty {
+	background-color: #f6f7f9;
+	width: 25%;
+	border-radius: 0 20px 20px 0;
+}
+
+.legendaries-carrossel {
+	margin: 5px auto 15px;
+	display: flex;
+	justify-content: space-evenly;
+	max-width: 90%;
+	align-items: center;
+}
+
+.hidden,
+.hidden-1,
+.hidden-2,
+.hidden-3 {
+	display: none;
+}
+
+.legendaries-carrossel > a > img {
+	filter: brightness(50%);
+}
+
+#brightness {
+	filter: brightness(100%);
+}
+
+@media (min-width: 481px) {
+	header {
+		padding: 20px 10px;
+	}
+
+	header > img {
+		width: 128px;
+	}
+
+	.legendary-not-found {
+		height: calc(100vh - 380px);
+	}
+}
+
+@media (min-width: 690px) {
+	.hamburger-menu {
+		display: none;
+	}
+
+	.navbar {
+		display: flex;
+	}
+
+	.hidden {
+		display: inline-block;
+	}
+
+	.legendary-not-found {
+		height: calc(100vh - 420px);
+	}
+}
+
+@media (min-width: 769px) {
+	h1 {
+		font-size: 72px;
+		margin: 40px 70px;
+	}
+
+	.legendary-not-found {
+		height: calc(100vh - 500px);
+	}
+
+	.legendaries-info {
+		margin: 15px 30px;
+		justify-content: space-between;
+		flex-direction: row;
+	}
+
+	.legendaries-main-img {
+		max-width: 70%;
+	}
+
+	.legendaries-main-img > img {
+		display: block;
+		margin: 0;
+	}
+
+	.legendaries-name {
+		font-size: 72px;
+	}
+
+	.legendaries-info-content {
+		max-width: 35%;
+	}
+
+	.legendaries-carrossel {
+		margin: 0 auto 15px;
+	}
+
+	.hidden-1 {
+		display: inline-block;
+	}
+}
+
+@media (min-width: 966px) {
+	.hidden-2 {
+		display: inline-block;
+	}
+
+	.legendaries-info {
+		margin: 30px 80px;
+	}
+}
+
+@media (min-width: 1100px) {
+	.hidden-3 {
+		display: inline-block;
+	}
+
+	.legendaries-carrossel {
+		margin-bottom: 40px;
+	}
+
+	@media (min-width: 1400px) {
+		.main-container {
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+
+		header {
+			padding: 20px 130px;
+		}
+
+		.hidden-3 {
+			display: inline-block;
+		}
+
+		.legendaries-carrossel {
+			margin: 50px auto;
+		}
+	}
+}
