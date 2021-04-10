@@ -1,4 +1,5 @@
 const LegendaryModel = require('../models/LegendaryModel');
+const { v4: uuidv4 } = require('uuid');
 
 const LegendariesService = {
 	listLegendaries: () => {
@@ -82,12 +83,31 @@ const LegendariesService = {
 		);
 		return [mew, moltres, articuno, zapdos, diancie, xerneas];
 	},
-	listPokemonData: (name) => {
+	listPokemonData: (pokemonName) => {
 		const pokemonList = LegendariesService.listLegendaries();
-		console.log(pokemonList);
-		const pokemon = pokemonList.find((item) => item.name.toLowerCase() === name);
-		console.log(pokemon);
+		let pokemon = pokemonList.find((item) => item.name === pokemonName);
+
+		if (!pokemon) {
+			pokemon = pokemonList[0];
+		}
+
 		return pokemon;
+	},
+	createLegendary: (name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img) => {
+		const newLegendary = new LegendaryModel(
+			uuidv4(),
+			name,
+			description,
+			type,
+			healthPoints,
+			specialAttack,
+			defense,
+			attack,
+			experience,
+			specialDefense,
+			img
+		);
+		return newLegendary;
 	},
 };
 
