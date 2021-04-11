@@ -26,34 +26,20 @@ const LegendariesService = {
 		return pokemon;
 	},
 	createLegendary: (name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img) => {
-		fs.readFile(legendariesJson, 'utf8', function (err, data) {
-			if (err) {
-				return console.log(err);
-			}
-			const legendariesList = JSON.parse(data);
-			const newLegendary = new LegendaryModel(
-				uuidv4(),
-				name,
-				description,
-				type,
-				healthPoints,
-				specialAttack,
-				defense,
-				attack,
-				experience,
-				specialDefense,
-				img
-			);
-			legendariesList.push(newLegendary);
-			const newLegendariesString = JSON.stringify(legendariesList, null, 2);
-			fs.writeFileSync(legendariesJson, newLegendariesString, (err) => {
-				if (err) {
-					console.error(err);
-					return;
-				}
-			});
-		});
-		return 'New legendary created with sucess';
+		const newLegendary = new LegendaryModel(
+			uuidv4(),
+			name,
+			description,
+			type,
+			healthPoints,
+			specialAttack,
+			defense,
+			attack,
+			experience,
+			specialDefense,
+			img
+		);
+		return newLegendary;
 	},
 };
 

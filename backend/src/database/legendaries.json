@@ -15,7 +15,7 @@
   {
     "id": 2,
     "name": "Moltres",
-    "description": "So Moltres is a legendary bird Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.",
+    "description": "Moltres is a legendary bird Pokémon that has the ability to control fire. If this Pokémon is injured, it is said to dip its body in the molten magma of a volcano to burn and heal itself.",
     "type": "Fire / Flying",
     "healthPoints": "1000.000",
     "specialAttack": "1000.000",
@@ -76,18 +76,5 @@
     "experience": "1000.000",
     "specialDefense": "1000.000",
     "img": "/images/xerneas.png"
-  },
-  {
-    "id": "4023d288-416a-4fbd-854a-5fd2af6dff6b",
-    "name": "MewTwo",
-    "description": "Mewtwo is a Pokémon that was created by genetic manipulation. However, even though the scientific power of humans created this Pokémon's body, they failed to endow Mewtwo with a compassionate heart.",
-    "type": "Psychic",
-    "healthPoints": "1000,000",
-    "specialAttack": "1000,000",
-    "defense": "1000,000",
-    "attack": "1000,000",
-    "experience": "1000,000",
-    "specialDefense": "1000,000",
-    "img": "/images/mewtwo.png"
   }
 ]
