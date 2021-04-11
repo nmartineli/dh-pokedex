@@ -1,13 +1,33 @@
 const LegendariesService = require('../services/LegendariesService');
+const fs = require('fs');
+const legendariesJson = './src/database/legendaries.json';
 
 const controller = {
-	index: (req, res) => {
-		const { name } = req.query;
-
-		const legendary = LegendariesService.listPokemonData(name);
-
-		return res.json(legendary);
+	read: (req, res) => {
+		fs.readFile(legendariesJson, 'utf8', function (err, data) {
+			if (err) {
+				return console.log(err);
+			}
+			const legendariesList = JSON.parse(data);
+			return res.json(legendariesList);
+		});
 	},
+
+	readPokemon: (req, res) => {
+		const { id } = req.params;
+		fs.readFile(legendariesJson, 'utf8', function (err, data) {
+			if (err) {
+				return console.log(err);
+			}
+			const legendariesList = JSON.parse(data);
+			const legendaryFilter = legendariesList.filter((item) => {
+				return item.id == id;
+			});
+			console.log(legendaryFilter);
+			return res.json(legendaryFilter);
+		});
+	},
+
 	create: (req, res) => {
 		const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img } = req.body;
 

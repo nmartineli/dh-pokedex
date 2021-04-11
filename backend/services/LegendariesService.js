@@ -9,8 +9,10 @@ const LegendariesService = {
 			if (err) {
 				return console.log(err);
 			}
-			let legendariesList = JSON.parse(data);
-			return legendariesList;
+			const legendariesList = JSON.parse(data);
+			console.log(legendariesList);
+			const newLegendariesString = JSON.stringify(legendariesList, null, 2);
+			console.log(newLegendariesString);
 		});
 	},
 	listPokemonData: (pokemonName) => {
