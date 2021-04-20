@@ -1,5 +1,6 @@
 const LegendariesService = require('../services/LegendariesService');
 const fs = require('fs');
+const { validationResult } = require('express-validator');
 const legendariesJson = './src/database/legendaries.json';
 
 const controller = {
@@ -33,6 +34,13 @@ const controller = {
 	},
 
 	create: (req, res) => {
+		/*	Express Validator	
+		let errors = validationResult(req);
+
+		if (!errors.isEmpty()) {
+			return res.status(400).json(errors);
+		}
+		*/
 		const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img } = req.body;
 
 		const legendary = LegendariesService.createLegendary(
