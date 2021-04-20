@@ -10,6 +10,7 @@ const multerConfig = require('./config/multer');
 const indexRouter = require('./routes/index');
 const legendariesRouter = require('./routes/legendaries');
 const FileController = require('./controllers/FileController');
+const Logger = require('./middlewares/Logger');
 
 const app = express();
 
@@ -19,12 +20,13 @@ const uploadFile = multer({ storage: multerConfig });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(logger('dev'));
+//app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(Logger);
 app.use('/', indexRouter);
 app.use('/legendaries', legendariesRouter);
 app.post('/files', uploadFile.single('file'), FileController.storeFile); // single significa que só recebe um arquivo. array recebe vários.
