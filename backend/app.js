@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const multer = require('multer');
+const session = require('express-session');
 
 const multerConfig = require('./config/multer');
 
@@ -16,6 +17,15 @@ const app = express();
 
 const uploadFile = multer({ storage: multerConfig });
 
+//session
+app.use(
+	session({
+		secret: '9b99e32a1b7192927c8fb259559f88c2',
+		resave: false,
+		saveUninitialized: true,
+	})
+);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -23,7 +33,9 @@ app.set('view engine', 'ejs');
 //app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+
 app.use(cookieParser());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(Logger);

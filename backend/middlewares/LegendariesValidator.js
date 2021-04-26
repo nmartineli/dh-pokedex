@@ -8,8 +8,8 @@
 }
 
 module.exports = validator;*/
-
-/* Express Validator:
+/*
+ Express Validator:
 const { check, validationResult, body } = require('express-validator');
 
 const validationList = [

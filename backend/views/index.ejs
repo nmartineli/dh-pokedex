@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="<%=darkMode ? 'dark-mode': ''%>">
         <img src="/images/logo.svg" alt="Logo" />
         <button type="button" class="hamburger-menu">
             <img src="/images/hamburger.svg" alt="Botão do menu" />
@@ -29,7 +29,7 @@
             <p>You can know the type of Pokemon, its strengths, disadvantages and abilities</p>
             <a href="#" class="link-pokemon">See pokemons</a>
         </div>
-        <a href="#" class="botao-flutuante">
+        <a href="/dark-mode" class="botao-flutuante">
             <img src="/images/pokebola.svg" alt="pokebola">
         </a>
     </main>
