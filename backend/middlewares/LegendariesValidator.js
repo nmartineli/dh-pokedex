@@ -49,14 +49,16 @@ function validator(req, res, next) {
 		img: yup.string().typeError('Image must be a valid URL').required('Image is required'),
 	});
 
-	schema
-		.strict()
-		.validate(req.body)
-		.catch((errors) => {
-			return res.status(400).json({ errors: errors.message });
-		});
-
-	next();
+	if (!schema.isValidSync(req.body)) {
+		schema
+			.strict()
+			.validate(req.body, { abortEarly: false })
+			.catch((errors) => {
+				return res.status(400).json({ errors: errors.errors });
+			});
+	} else {
+		next();
+	}
 }
 
 module.exports = validator;
