@@ -4,11 +4,6 @@ const { validationResult } = require('express-validator');
 const legendariesJson = './src/database/legendaries.json';
 
 const controller = {
-	indexAll: async (req, res) => {
-		const list = await LegendariesService.getLegendaryList();
-		return res.json(list);
-	},
-
 	read: (req, res) => {
 		fs.readFile(legendariesJson, 'utf8', function (err, data) {
 			if (err) {
