@@ -38,17 +38,10 @@ const controller = {
 		});
 	},
 
-	create: (req, res) => {
-		/*	Express Validator	
-		let errors = validationResult(req);
+	create: async (req, res) => {
+		const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense } = req.body;
 
-		if (!errors.isEmpty()) {
-			return res.status(400).json(errors);
-		}
-		*/
-		const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img } = req.body;
-
-		const legendary = LegendariesService.createLegendary(
+		const legendary = await LegendariesService.createLegendary(
 			name,
 			description,
 			type,
@@ -57,63 +50,28 @@ const controller = {
 			defense,
 			attack,
 			experience,
-			specialDefense,
-			img
+			specialDefense
 		);
-		fs.readFile(legendariesJson, 'utf8', function (err, data) {
-			if (err) {
-				return console.log(err);
-			}
-			const legendariesList = JSON.parse(data);
-			legendariesList.push(legendary);
-			const newLegendariesString = JSON.stringify(legendariesList, null, 2);
-			fs.writeFileSync(legendariesJson, newLegendariesString, (err) => {
-				if (err) {
-					console.error(err);
-					return;
-				}
-			});
-			return res.json(legendary);
-		});
+
+		return res.json(legendary);
 	},
-	update: (req, res) => {
-		fs.readFile(legendariesJson, 'utf8', function (err, data) {
-			if (err) {
-				return console.log(err);
-			}
+	update: async (req, res) => {
+		const { id } = req.params;
+		const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img } = req.body;
 
-			const { id } = req.params;
-			const { name, description, type, healthPoints, specialAttack, defense, attack, experience, specialDefense, img } = req.body;
-			const legendariesList = JSON.parse(data);
-
-			const legendaryFilter = legendariesList.findIndex((item) => item.id == id);
-
-			if (legendaryFilter == -1) {
-				return res.status(400).send('The id ' + id + ' does not exist');
-			} else {
-				legendariesList[legendaryFilter].name = name;
-				legendariesList[legendaryFilter].description = description;
-				legendariesList[legendaryFilter].type = type;
-				legendariesList[legendaryFilter].healthPoints = healthPoints;
-				legendariesList[legendaryFilter].specialAttack = specialAttack;
-				legendariesList[legendaryFilter].defense = defense;
-				legendariesList[legendaryFilter].attack = attack;
-				legendariesList[legendaryFilter].experience = experience;
-				legendariesList[legendaryFilter].specialDefense = specialDefense;
-				legendariesList[legendaryFilter].img = img;
-
-				console.log(legendariesList);
-
-				const newLegendariesString = JSON.stringify(legendariesList, null, 2);
-				fs.writeFileSync(legendariesJson, newLegendariesString, (err) => {
-					if (err) {
-						console.error(err);
-						return;
-					}
-				});
-				return res.json(legendariesList[legendaryFilter]);
-			}
-		});
+		const updatedLegendary = await LegendariesService.updateLegendary(
+			id,
+			name,
+			description,
+			type,
+			healthPoints,
+			specialAttack,
+			defense,
+			attack,
+			experience,
+			specialDefense
+		);
+		res.json(updatedLegendary);
 	},
 	delete: (req, res) => {
 		fs.readFile(legendariesJson, 'utf8', function (err, data) {
@@ -142,6 +100,12 @@ const controller = {
 				return res.json(removedLegendary);
 			}
 		});
+	},
+	destroy: async (req, res) => {
+		const { id } = req.params;
+
+		const deletedLegendary = await LegendariesService.destroyLegendary(id);
+		return res.json(deletedLegendary);
 	},
 };
 

@@ -40,13 +40,12 @@ function validator(req, res, next) {
 			.typeError('Description must be a string')
 			.required('Description is required')
 			.min(10, 'Description must have at least 10 characters'),
-		healthPoints: yup.string().typeError('Health Points must be a string').required('Health Points is required'),
-		specialAttack: yup.string().typeError('Special Attack must be a string').required('Special Attack is required'),
-		defense: yup.string().typeError('Defense must be a string').required('Defense is required'),
-		attack: yup.string().typeError('Attack must be a string').required('Attack is required'),
-		experience: yup.string().typeError('Experience must be a string').required('Experience is required'),
-		specialDefense: yup.string().typeError('Special Defense must be a string').required('Special Defense is required'),
-		img: yup.string().typeError('Image must be a valid URL').required('Image is required'),
+		healthPoints: yup.number().typeError('Health Points must be a string').required('Health Points is required'),
+		specialAttack: yup.number().typeError('Special Attack must be a string').required('Special Attack is required'),
+		defense: yup.number().typeError('Defense must be a string').required('Defense is required'),
+		attack: yup.number().typeError('Attack must be a string').required('Attack is required'),
+		experience: yup.number().typeError('Experience must be a string').required('Experience is required'),
+		specialDefense: yup.number().typeError('Special Defense must be a string').required('Special Defense is required'),
 	});
 
 	if (!schema.isValidSync(req.body)) {
