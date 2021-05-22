@@ -71,6 +71,7 @@ const controller = {
 			experience,
 			specialDefense
 		);
+
 		res.json(updatedLegendary);
 	},
 	delete: (req, res) => {

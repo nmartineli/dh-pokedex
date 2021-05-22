@@ -72,12 +72,18 @@ const LegendariesService = {
 			},
 			{ where: { id: id } }
 		);
-
-		return updatedLegendary;
+		let updatedLegendaryResponse = [updatedLegendary];
+		let findUpdatedLegendary = await database.Legendary.findByPk(id);
+		updatedLegendaryResponse.push(findUpdatedLegendary);
+		return updatedLegendaryResponse;
 	},
 	destroyLegendary: async (id) => {
+		let deletedLegendaryResponse = [];
+		let findDeletedLegendary = await database.Legendary.findByPk(id);
 		const deletedLegendary = await database.Legendary.destroy({ where: { id } });
-		return deletedLegendary;
+		deletedLegendaryResponse.push(deletedLegendary);
+		deletedLegendaryResponse.push(findDeletedLegendary);
+		return deletedLegendaryResponse;
 	},
 };
 
